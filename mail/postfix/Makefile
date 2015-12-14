@@ -245,6 +245,9 @@ PATCH_DIST_STRIP=	-p1
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
+PLIST_SUB+=	TEST=""
+.else
+PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
